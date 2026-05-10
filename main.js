@@ -38,3 +38,26 @@ recommendBtn.addEventListener('click', () => {
   jobNameEl.textContent = recommendedJob.name;
   jobDescriptionEl.textContent = recommendedJob.description;
 });
+
+// 테마 변경 기능
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// 초기 테마 설정 (로컬 스토리지 확인)
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'light') {
+  body.classList.add('light-mode');
+  themeToggle.textContent = '다크 모드';
+}
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-mode');
+  
+  if (body.classList.contains('light-mode')) {
+    localStorage.setItem('theme', 'light');
+    themeToggle.textContent = '다크 모드';
+  } else {
+    localStorage.setItem('theme', 'dark');
+    themeToggle.textContent = '화이트 모드';
+  }
+});
