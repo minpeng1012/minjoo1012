@@ -1,14 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>마피아42 직업 추천</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div id="app">
+    <header>
+      <h1>마피아42 직업 추천</h1>
+      <p>선호하는 역할을 선택하고 직업을 추천 받으세요!</p>
+    </header>
+    <main>
+      <div id="role-selection">
+        <h2>역할 선택</h2>
+        <div class="role-options">
+          <label><input type="checkbox" name="role" value="mafia"> 마피아팀</label>
+          <label><input type="checkbox" name="role" value="citizen"> 시민팀</label>
+          <label><input type="checkbox" name="role" value="special"> 특수직업</label>
+        </div>
+      </div>
+      <button id="recommend-btn">직업 추천 받기</button>
+      <div id="result">
+        <h2>추천 직업</h2>
+        <p id="job-name">...</p>
+        <p id="job-description"></p>
+      </div>
+    </main>
+  </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
